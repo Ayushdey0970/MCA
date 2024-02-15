@@ -12,7 +12,9 @@ class q11_lcm {
     }
 
     public static void main(String args[]) {
+        System.out.print("Enter a Number: ");
         int a = sc.nextInt();
+        System.out.print("Enter a Number: ");
         int b = sc.nextInt();
         if (a < b) {
             a = a + b;

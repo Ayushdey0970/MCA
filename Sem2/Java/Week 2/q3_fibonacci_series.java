@@ -5,6 +5,7 @@ class q3_fibonacci_series {
 
     public static void main(String args[]) {
         int a = 0, b = 1, c;
+        System.out.print("Enter Number of Terms: ");
         int num = sc.nextInt();
         if (num == 0) {
             System.out.println(":D");

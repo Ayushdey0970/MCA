@@ -10,6 +10,7 @@ class q16_binary_decimal {
         String s;
         switch (ch) {
             case 1:
+                System.out.print("Enter a Number: ");
                 n = sc.nextInt();
                 s = "";
                 while (n > 0) {
@@ -21,6 +22,7 @@ class q16_binary_decimal {
                 System.out.println(num);
                 break;
             case 2:
+                System.out.print("Enter a Number: ");
                 n = sc.nextInt();
                 s = "" + n;
                 int l = s.length();

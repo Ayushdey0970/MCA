@@ -4,6 +4,7 @@ class q13_grading_system {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+        System.out.print("Enter Marks: ");
         int marks = sc.nextInt();
         if (marks >= 90) {
             System.out.println("Grade A");

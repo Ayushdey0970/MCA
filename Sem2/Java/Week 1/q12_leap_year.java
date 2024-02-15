@@ -4,6 +4,7 @@ class q12_leap_year {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+        System.out.print("Enter a Year");
         int year = sc.nextInt();
         if (year % 4 == 0) {
             if (year % 100 == 0) {

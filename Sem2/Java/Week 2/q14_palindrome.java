@@ -4,6 +4,7 @@ class q14_palindrome {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+        System.out.print("Enter a Number: ");
         int n = sc.nextInt();
         int m = 0, c = n;
         while (c > 0) {
