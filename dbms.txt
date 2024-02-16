@@ -121,8 +121,7 @@ INSERT INTO library_branch (branch_id, branch_name, address)
 
 
 INSERT INTO book_copies(no_of_copies, book_id, branch_id)
-  WITH names AS ( 
-    SELECT 10,1,1 FROM dual UNION ALL 
+  WITH names AS (  
     SELECT 5,1,11 FROM dual UNION ALL 
     SELECT 2,2,12 FROM dual UNION ALL 
     SELECT 5,2,13 FROM dual UNION ALL
@@ -133,7 +132,7 @@ INSERT INTO book_copies(no_of_copies, book_id, branch_id)
   SELECT * FROM names;
 
 
-INSERT INTO book_copies(no_of_copies)
+INSERT INTO card(card_no)
   WITH names AS ( 
     SELECT 100 FROM dual UNION ALL 
     SELECT 101 FROM dual UNION ALL 
