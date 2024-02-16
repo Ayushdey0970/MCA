@@ -3,11 +3,11 @@
 
 struct node
 {
-    int data;
+    char data;
     struct node *left, *right;
 };
 
-struct node *createNode(int value)
+struct node *createNode(char value)
 {
     struct node *newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = value;
@@ -17,7 +17,7 @@ struct node *createNode(int value)
     return newNode;
 }
 
-struct node *insertNode(struct node *root, int value)
+struct node *insertNode(struct node *root, char value)
 {
     if (root == NULL)
     {
@@ -28,11 +28,11 @@ struct node *insertNode(struct node *root, int value)
     {
         if (root->data > value)
         {
-            return insertNode(root->left, value);
+            root->left = insertNode(root->left, value);
         }
         else
         {
-            return insertNode(root->right, value);
+            root->right = insertNode(root->right, value);
         }
     }
 }
@@ -79,67 +79,18 @@ void displayLevelWise(struct node *root)
     }
 }
 
-void searchElement(struct node *root, int value)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    else if (root->data == value)
-    {
-        printf("Data Exists");
-    }
-    else
-    {
-        if (root->data > value)
-        {
-            searchElement(root->left, value);
-        }
-        else
-        {
-            searchElement(root->right, value);
-        }
-    }
-}
-
 void main()
 {
     struct node *root = NULL;
-    int ch, val1, height, check, level, val;
-
-    printf("\n1. Insert\n2. Display\n3. Search\n4. Exit");
-
-    while (ch != 4)
+    int n;
+    printf("Enter Length of Name: ");
+    scanf("%d", &n);
+    char c[n];
+    printf("Enter Name to Insert: ");
+    scanf("%s", c);
+    for (int i = 0; i < n; i++)
     {
-        printf("\nEnter your choice : ");
-        scanf("%d", &ch);
-        switch (ch)
-        {
-        case 1:
-            printf("\nEnter the data to insert : ");
-            scanf("%d", &val1);
-            root = insertNode(root, val1);
-            printf("\n%d inserted\n", val1);
-            break;
-        case 2:
-            if (root == NULL)
-            {
-                printf("\nNothing to display\n");
-            }
-            printf("\nThe tree structure : \n");
-            displayLevelWise(root);
-            break;
-        case 3:
-            printf("Enter Element to Search: ");
-            scanf("%d", &val);
-            searchElement(root, val);
-            break;
-        case 4:
-            printf("Exiting");
-            break;
-        default:
-            printf("Invalid choice");
-            break;
-        }
+        root = insertNode(root, c[i]);
     }
+    displayLevelWise(root);
 }
