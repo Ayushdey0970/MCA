@@ -1,19 +1,27 @@
 import java.util.*;
+
 class q17_median {
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String args[]) {
-        int n=sc.nextInt();
-        int ar[]=new int[n];
-        for(int i=0;i<n;i++) {
-            ar[i]=sc.nextInt();
+        System.out.print("Enter Size of Array: ");
+        int n = sc.nextInt();
+        System.out.println("Enter Array Elements: ");
+        int ar[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            ar[i] = sc.nextInt();
         }
-        int index=0;
-        if(n%2==0) {
-            index=((n/2)+(n/2+1))/2-1;
+        Arrays.sort(ar);
+        for (int i = 0; i < n; i++) {
+            System.out.print(ar[i] + " ");
         }
-        else {
-            index=(n+1)/2-1;
+
+        double index = 0;
+        if (n % 2 == 0) {
+            index = (double)(ar[n / 2 - 1] + ar[n / 2]) / 2;
+        } else {
+            index = ar[(n - 1) / 2];
         }
-        System.out.println(ar[index]);
+        System.out.printf("\nMedian: %.2f", index);
     }
 }
