@@ -3,25 +3,6 @@ import java.util.*;
 class q2_stack_with_array {
     static Scanner sc = new Scanner(System.in);
 
-    static void push(int ar[], int top) {
-        if (top == ar.length - 1) {
-            System.out.println("Stack Overflow");
-            return;
-        }
-        System.out.print("Enter Value: ");
-        int val = sc.nextInt();
-        top++;
-        ar[top] = val;
-    }
-
-    static void pop(int ar[], int top) {
-        if (top == -1) {
-            System.out.println("Stack Underflow");
-            return;
-        }
-        top--;
-    }
-
     public static void main(String args[]) {
         System.out.print("Enter Size: ");
         int n = sc.nextInt();
@@ -32,10 +13,21 @@ class q2_stack_with_array {
             int ch = sc.nextInt();
             switch (ch) {
                 case 1:
-                    push(ar, top);
+                    if (top == ar.length - 1) {
+                        System.out.println("Stack Overflow");
+                    } else {
+                        System.out.print("Enter Value: ");
+                        int val = sc.nextInt();
+                        top++;
+                        ar[top] = val;
+                    }
                     break;
                 case 2:
-                    pop(ar, top);
+                    if (top == -1) {
+                        System.out.println("Stack Underflow");
+                    } else {
+                        top--;
+                    }
                     break;
             }
             for (int i = 0; i <= top; i++) {
