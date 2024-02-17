@@ -10,6 +10,7 @@ CREATE TABLE book_authors (
     author_name VARCHAR2(20) NOT NULL,
     book_id NUMBER(38) NOT NULL,
     FOREIGN KEY (book_id) REFERENCES book(book_id)
+    ON DELETE CASCADE
 );
 
 
@@ -23,7 +24,8 @@ CREATE TABLE publisher (
 ALTER TABLE book
 ADD CONSTRAINT fk_publisher_name
 FOREIGN KEY (publisher_name)
-REFERENCES publisher(name);
+REFERENCES publisher(name)
+ON DELETE CASCADE;
 
 
 CREATE TABLE book_copies (
@@ -32,6 +34,7 @@ CREATE TABLE book_copies (
     branch_id NUMBER(38) NOT NULL,
     PRIMARY KEY (book_id, branch_id),
     FOREIGN KEY (book_id) REFERENCES book(book_id)
+    ON DELETE CASCADE
 );
 
 
@@ -43,6 +46,7 @@ CREATE TABLE book_lending (
     card_no NUMBER(38),
     PRIMARY KEY (book_id, branch_id, card_no),
     FOREIGN KEY (book_id) REFERENCES book(book_id)
+    ON DELETE CASCADE
 );
 
 
@@ -61,19 +65,22 @@ CREATE TABLE card (
 ALTER TABLE book_copies
 ADD CONSTRAINT fk_book_copies_branch
 FOREIGN KEY (branch_id)
-REFERENCES library_branch(branch_id);
+REFERENCES library_branch(branch_id)
+ON DELETE CASCADE;
 
 
 ALTER TABLE book_lending
 ADD CONSTRAINT fk_book_lending_branch
 FOREIGN KEY (branch_id)
-REFERENCES library_branch(branch_id);
+REFERENCES library_branch(branch_id)
+ON DELETE CASCADE;
 
 
 ALTER TABLE book_lending
 ADD CONSTRAINT fk_book_lending_card
 FOREIGN KEY (card_no)
-REFERENCES card(card_no);
+REFERENCES card(card_no)
+ON DELETE CASCADE;
 
 
 INSERT INTO publisher (name, phone, address)
