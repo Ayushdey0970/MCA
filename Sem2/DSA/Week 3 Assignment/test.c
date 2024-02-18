@@ -6,8 +6,15 @@
 
 int main()
 {
-    char c='a';
-    char c1='c';
-    
+    char c = 'a';
+    char c1 = 'c';
+    if (c > c1)
+    {
+        printf("%c", c);
+    }
+    else
+    {
+        printf("%c", c1);
+    }
     return 0;
 }

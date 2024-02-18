@@ -47,7 +47,7 @@ void displayLevelOrder(struct node *root, int level)
 
     if (level == 1)
     {
-        printf("%d ", root->data);
+        printf("%c ", root->data);
     }
     else if (level > 1)
     {
@@ -79,6 +79,17 @@ void displayLevelWise(struct node *root)
     }
 }
 
+void inorder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    inorder(root->left);
+    printf("%c ", root->data);
+    inorder(root->right);
+}
+
 void main()
 {
     struct node *root = NULL;
@@ -93,4 +104,5 @@ void main()
         root = insertNode(root, c[i]);
     }
     displayLevelWise(root);
+    inorder(root);
 }

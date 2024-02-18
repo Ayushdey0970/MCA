@@ -19,20 +19,34 @@ struct node *createNode(int value)
 
 struct node *insertNode(struct node *root, int value)
 {
-    struct node *loop = root;
-    while (loop != NULL)
+    struct node *newnode = createNode(value);
+    if (root == NULL)
     {
-        if (loop->data >= value)
+        return newnode;
+    }
+    struct node *child = root;
+    struct node *parent = NULL;
+
+    while (child != NULL)
+    {
+        parent = child;
+        if (value < child->data)
         {
-            loop = loop->left;
+            child = child->left;
         }
         else
         {
-            loop = loop->right;
+            child = child->right;
         }
     }
-    loop->data = value;
-    loop->left = loop->right = NULL;
+    if (value < parent->data)
+    {
+        parent->left = newnode;
+    }
+    else
+    {
+        parent->right = newnode;
+    }
     return root;
 }
 

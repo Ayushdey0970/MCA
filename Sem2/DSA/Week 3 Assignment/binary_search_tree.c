@@ -103,14 +103,84 @@ int searchElement(struct node *root, int value)
     }
 }
 
+int countTotalNodes(struct node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return (countTotalNodes(root->left) + countTotalNodes(root->right) + 1);
+}
+
+int largestElement(struct node *root)
+{
+    while (root->right != NULL)
+    {
+        root = root->right;
+    }
+    return root->data;
+}
+
+void preorder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    printf("%d ", root->data);
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void inorder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    inorder(root->left);
+    printf("%d ", root->data);
+    inorder(root->right);
+}
+
+void postorder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d ", root->data);
+}
+
+void sorting(struct node *root)
+{
+    int s;
+    printf("Enter Size of Array: ");
+    scanf("%d", &s);
+    int ar[s];
+    printf("Enter Array Elements: ");
+    for (int i = 0; i < s; i++)
+    {
+        scanf("%d", &ar[i]);
+    }
+    for (int i = 0; i < s; i++)
+    {
+        root = insertNode(root, ar[i]);
+    }
+    printf("Sorted Array: ");
+    inorder(root);
+}
+
 void main()
 {
     struct node *root = NULL;
     int ch, val1, height, check, level, val;
 
-    printf("\n1. Insert\n2. Display\n3. Search\n4. Exit");
+    printf("\n1. Insert\n2. Display\n3. Search\n4. Total Nodes\n5. Largest Element\n6. PreOrder\n7. InOrder\n8. PostOrder\n9. Insert through Array\n10. Exit");
 
-    while (ch != 4)
+    while (ch != 10)
     {
         printf("\nEnter your choice : ");
         scanf("%d", &ch);
@@ -140,6 +210,24 @@ void main()
             }
             break;
         case 4:
+            printf("Total Nodes: " + countTotalNodes(root));
+            break;
+        case 5:
+            printf("Largest Element of this Tree is: " + largestElement(root));
+            break;
+        case 6:
+            preorder(root);
+            break;
+        case 7:
+            inorder(root);
+            break;
+        case 8:
+            postorder(root);
+            break;
+        case 9:
+            sorting(root);
+            break;
+        case 10:
             printf("Exiting");
             break;
         default:
