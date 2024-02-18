@@ -192,7 +192,7 @@ GROUP BY bc.book_id, bc.no_of_copies;
 
 SELECT *
 FROM library_branch
-WHERE address LIKE '%BANGALORE%';
+WHERE branch_address LIKE '%BANGALORE%';
 
 
 SELECT publisher_name
