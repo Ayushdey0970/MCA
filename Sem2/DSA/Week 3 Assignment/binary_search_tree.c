@@ -1,4 +1,4 @@
-//all questions - 2,5,9
+// all questions - 2,5,9
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -87,7 +87,7 @@ int searchElement(struct node *root, int value)
     {
         return 0;
     }
-    else if (root->data == value)
+    if (root->data == value)
     {
         printf("Data Exists");
         return 1;
