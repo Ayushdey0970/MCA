@@ -1,5 +1,3 @@
-import java.util.*;
-
 class q1_inheritence {
   float salary = 40000;
 }
