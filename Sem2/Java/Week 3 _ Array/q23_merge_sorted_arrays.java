@@ -2,51 +2,57 @@ import java.util.Scanner;
 
 public class q23_merge_sorted_arrays {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the size of the first array (A): ");
-        int sizeA = scanner.nextInt();
-        int[] A = new int[sizeA];
-        System.out.println("Enter the elements of the first array (A) in ascending order:");
-        for (int i = 0; i < sizeA; i++) {
-            A[i] = scanner.nextInt();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the size of the first array (ar1): ");
+        int n = sc.nextInt();
+
+        int[] ar1 = new int[n];
+        System.out.println("Enter the elements of the first array (ar1) in ascending order:");
+        for (int i = 0; i < n; i++) {
+            ar1[i] = sc.nextInt();
         }
-        System.out.print("Enter the size of the second array (B): ");
-        int sizeB = scanner.nextInt();
-        int[] B = new int[sizeB];
-        System.out.println("Enter the elements of the second array (B) in ascending order:");
-        for (int i = 0; i < sizeB; i++) {
-            B[i] = scanner.nextInt();
+
+        System.out.print("Enter the size of the second array (ar2): ");
+        int m = sc.nextInt();
+
+        int[] ar2 = new int[m];
+        System.out.println("Enter the elements of the second array (ar2) in ascending order:");
+        for (int i = 0; i < m; i++) {
+            ar2[i] = sc.nextInt();
         }
-        int[] C = mergeArrays(A, B);
-        System.out.println("Merged array (C):");
-        for (int num : C) {
+
+        int[] ar3 = mergeArrays(ar1, ar2);
+
+        System.out.println("Merged array (ar3):");
+        for (int num : ar3) {
             System.out.print(num + " ");
         }
-        scanner.close();
+        sc.close();
     }
 
-    public static int[] mergeArrays(int[] A, int[] B) {
-        int sizeA = A.length;
-        int sizeB = B.length;
-        int[] C = new int[sizeA + sizeB];
+    public static int[] mergeArrays(int[] ar1, int[] ar2) {
+        int n = ar1.length;
+        int m = ar2.length;
+        int[] ar3 = new int[n + m];
 
         int i = 0, j = 0, k = 0;
-        while (i < sizeA && j < sizeB) {
-            if (A[i] < B[j]) {
-                C[k++] = A[i++];
+        while (i < n && j < m) {
+            if (ar1[i] < ar2[j]) {
+                ar3[k++] = ar1[i++];
             } else {
-                C[k++] = B[j++];
+                ar3[k++] = ar2[j++];
             }
         }
 
-        while (i < sizeA) {
-            C[k++] = A[i++];
+        while (i < n) {
+            ar3[k++] = ar1[i++];
         }
 
-        while (j < sizeB) {
-            C[k++] = B[j++];
+        while (j < m) {
+            ar3[k++] = ar2[j++];
         }
 
-        return C;
+        return ar3;
     }
 }
