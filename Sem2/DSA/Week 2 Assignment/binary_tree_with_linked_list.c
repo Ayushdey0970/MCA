@@ -140,36 +140,36 @@ int countInternalNodes(struct node *root)
     return countTotalNodes(root) - countLeafNodes(root) - 1;
 }
 
-// void siblings(struct node *root, int value)
-// {
-//     if (root == NULL)
-//     {
-//         printf("%d has no siblings", value);
-//         return;
-//     }
-//     if (root->left->data == value)
-//     {
-//         if (root->right != NULL)
-//         {
-//             printf("%d has 1 sibling", value);
-//             return;
-//         }
-//         printf("%d has no siblings", value);
-//         return;
-//     }
-//     if (root->right->data == value)
-//     {
-//         if (root->left != NULL)
-//         {
-//             printf("%d has 1 sibling", value);
-//             return;
-//         }
-//         printf("%d has no siblings", value);
-//         return;
-//     }
-//     siblings(root->left, value);
-//     siblings(root->right, value);
-// }
+void siblings(struct node *root, int value)
+{
+    if (root == NULL)
+    {
+        printf("%d has no siblings", value);
+        return;
+    }
+    if (root->left->data == value)
+    {
+        if (root->right != NULL)
+        {
+            printf("%d has 1 sibling", value);
+            return;
+        }
+        printf("%d has no siblings", value);
+        return;
+    }
+    if (root->right->data == value)
+    {
+        if (root->left != NULL)
+        {
+            printf("%d has 1 sibling", value);
+            return;
+        }
+        printf("%d has no siblings", value);
+        return;
+    }
+    siblings(root->left, value);
+    siblings(root->right, value);
+}
 
 int totalSiblings(struct node *root)
 {
@@ -196,9 +196,9 @@ void main()
     struct node *root = NULL;
     int ch, val1, height, check, level, val;
 
-    printf("\n1. Insert\n2. Display\n3. Height\n4. Order\n5. Count all leaf nodes\n6. Count total nodes\n7. Check if a node has a sibling\n8. Count total siblings\n9. Exit\n");
+    printf("\n1. Insert\n2. Display\n3. Height\n4. Order\n5. Count all leaf nodes\n6. Count total nodes\n7. Count all internal nodes\n8. Check if a node has a sibling\n9. Count total siblings\n10. Exit\n");
 
-    while (ch != 9)
+    while (ch != 10)
     {
         printf("\nEnter your choice : ");
         scanf("%d", &ch);
@@ -236,22 +236,22 @@ void main()
         case 7:
             printf("The number of internal nodes is %d\n", countInternalNodes(root));
             break;
-        // case 8:
-        //     printf("\nEnter the node to check : ");
-        //     scanf("%d", &val);
-        //     if (root->data == val)
-        //     {
-        //         printf("Root doesn't have siblings");
-        //     }
-        //     else
-        //     {
-        //         siblings(root, val);
-        //     }
-        //     break;
         case 8:
-            printf("This tree has a total of %d siblings", totalSiblings(root));
+            printf("\nEnter the node to check : ");
+            scanf("%d", &val);
+            if (root->data == val)
+            {
+                printf("Root doesn't have siblings");
+            }
+            else
+            {
+                siblings(root, val);
+            }
             break;
         case 9:
+            printf("This tree has a total of %d siblings", totalSiblings(root));
+            break;
+        case 10:
             printf("Exiting");
             break;
         default:
