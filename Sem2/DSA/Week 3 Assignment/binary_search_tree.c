@@ -215,7 +215,7 @@ void main()
             printf("Total Nodes: %d", countTotalNodes(root));
             break;
         case 5:
-            printf("Largest Element of this Tree is: " + largestElement(root));
+            printf("Largest Element of this Tree is: %d", largestElement(root));
             break;
         case 6:
             preorder(root);
