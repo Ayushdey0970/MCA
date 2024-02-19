@@ -24,7 +24,6 @@ struct node *insertNode(struct node *root, int value)
     if (root == NULL)
     {
         root = createNode(value);
-        return root;
     }
     else
     {
@@ -37,6 +36,7 @@ struct node *insertNode(struct node *root, int value)
             root->right = insertNode(root->right, value);
         }
     }
+    return root;
 }
 
 void displayLevelOrder(struct node *root, int level)
