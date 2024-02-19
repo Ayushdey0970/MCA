@@ -1,19 +1,20 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class q9_reverse_array {
+class q16_non_zero_numbers {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
         System.out.print("Enter Size of Array: ");
         int n = sc.nextInt();
-        int ar[] = new int[n];
         System.out.println("Enter Array Elements: ");
+        int ar[] = new int[n];
+        int count = 0;
         for (int i = 0; i < n; i++) {
             ar[i] = sc.nextInt();
+            if (ar[i] != 0) {
+                count++;
+            }
         }
-        System.out.println("Reverse Order: ");
-        for (int i = n - 1; i >= 0; i--) {
-            System.out.print(ar[i] + " ");
-        }
+        System.out.println("Number of Non-Zero Elements: " + count);
     }
 }

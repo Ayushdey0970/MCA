@@ -1,6 +1,6 @@
 import java.util.*;
 
-class q4_sum_2d_matrix {
+class q20_subtract_matrix {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
@@ -20,10 +20,10 @@ class q4_sum_2d_matrix {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 a2[i][j] = sc.nextInt();
-                a1[i][j] = a1[i][j] + a2[i][j];
+                a1[i][j] = a1[i][j] - a2[i][j];
             }
         }
-        System.out.println("Summation: ");
+        System.out.println("Difference: ");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 System.out.print(a1[i][j] + " ");

@@ -4,11 +4,12 @@ class q3_queue_with_array {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+        System.out.println("Enter Size of Array: ");
         int n = sc.nextInt();
         int ar[] = new int[n];
         int front = -1, rear = -1;
         while (true) {
-            System.out.println("1. Enqueue\n2. Dequeue\n");
+            System.out.println("1. Enqueue\n2. Dequeue");
             int ch = sc.nextInt();
             switch (ch) {
                 case 1:
@@ -25,15 +26,22 @@ class q3_queue_with_array {
                     }
                     break;
                 case 2:
-                    if (front > rear) {
-                        System.out.println("Stack Underflow");
+                    if (front == -1) {
+                        System.out.println("Queue Underflow");
+                    } else if (front == rear) {
+                        front = rear = -1;
                     } else {
-                        front++;
+                        for (int i = front; i < rear; i++) {
+                            ar[i] = ar[i + 1];
+                        }
+                        rear--;
                     }
                     break;
             }
-            for (int i = front; i <= rear; i++) {
-                System.out.print(ar[i] + " ");
+            if (front != -1) {
+                for (int i = front; i <= rear; i++) {
+                    System.out.print(ar[i] + " ");
+                }
             }
             System.out.println("\nDo you want to modify the queue?\n1. Yes\n2. No\n");
             ch = sc.nextInt();
