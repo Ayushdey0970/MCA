@@ -178,7 +178,7 @@ void sorting(struct node *root)
 void main()
 {
     struct node *root = NULL;
-    int ch, val1, height, check, level, val;
+    int ch, val;
 
     printf("\n1. Insert\n2. Display\n3. Search\n4. Total Nodes\n5. Largest Element\n6. PreOrder\n7. InOrder\n8. PostOrder\n9. Insert through Array\n10. Exit");
 
@@ -190,9 +190,9 @@ void main()
         {
         case 1:
             printf("\nEnter the data to insert : ");
-            scanf("%d", &val1);
-            root = insertNode(root, val1);
-            printf("\n%d inserted\n", val1);
+            scanf("%d", &val);
+            root = insertNode(root, val);
+            printf("\n%d inserted\n", val);
             break;
         case 2:
             if (root == NULL)
@@ -205,8 +205,8 @@ void main()
         case 3:
             printf("Enter Element to Search: ");
             scanf("%d", &val);
-            check = searchElement(root, val);
-            if (check == 0)
+            val = searchElement(root, val);
+            if (val == 0)
             {
                 printf("Data doesn't exist");
             }
