@@ -156,8 +156,9 @@ void postorder(struct node *root)
     printf("%d ", root->data);
 }
 
-void sorting(struct node *root)
+void sorting()
 {
+    struct node *root = NULL;
     int s;
     printf("Enter Size of Array: ");
     scanf("%d", &s);
@@ -227,7 +228,7 @@ void main()
             postorder(root);
             break;
         case 9:
-            sorting(root);
+            sorting();
             break;
         case 10:
             printf("Exiting");
