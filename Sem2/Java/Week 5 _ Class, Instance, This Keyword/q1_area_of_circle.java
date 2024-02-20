@@ -10,39 +10,32 @@ class Point {
 }
 
 class Circle {
-    Point center;
-    double radius;
+    Point centre;
+    int r;
 
-    Circle(Point center, double radius) {
-        this.center = center;
-        this.radius = radius;
+    Circle(Point centre, int r) {
+        this.centre = centre;
+        this.r = r;
     }
 
-    double calculateArea() {
-        return Math.PI * radius * radius;
+    void area() {
+        System.out.println("Area of Circle: " + Math.PI * r * r);
     }
 
-    void displayArea() {
-        System.out.println("Area of the circle: " + calculateArea());
-    }
 }
 
-public class q1_area_of_circle {
+class q1_area_of_circle {
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-
-        System.out.print("Enter the x-coordinate of the center: ");
+    public static void main(String args[]) {
+        System.out.print("Enter X Co-ordinates: ");
         double x = sc.nextDouble();
-        System.out.print("Enter the y-coordinate of the center: ");
+        System.out.print("Enter Y Co-ordinates: ");
         double y = sc.nextDouble();
-        System.out.print("Enter the radius of the circle: ");
-        double radius = sc.nextDouble();
-
-        Point center = new Point(x, y);
-
-        Circle circle = new Circle(center, radius);
-
-        circle.displayArea();
+        System.out.print("Enter Radius: ");
+        int r = sc.nextInt();
+        Point centre = new Point(x, y);
+        Circle cir = new Circle(centre, r);
+        cir.area();
     }
 }
