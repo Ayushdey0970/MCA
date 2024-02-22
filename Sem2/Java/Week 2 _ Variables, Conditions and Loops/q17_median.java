@@ -12,13 +12,10 @@ class q17_median {
             ar[i] = sc.nextInt();
         }
         Arrays.sort(ar);
-        for (int i = 0; i < n; i++) {
-            System.out.print(ar[i] + " ");
-        }
 
         double index = 0;
         if (n % 2 == 0) {
-            index = (double)(ar[n / 2 - 1] + ar[n / 2]) / 2;
+            index = (double) (ar[n / 2 - 1] + ar[n / 2]) / 2;
         } else {
             index = ar[(n - 1) / 2];
         }

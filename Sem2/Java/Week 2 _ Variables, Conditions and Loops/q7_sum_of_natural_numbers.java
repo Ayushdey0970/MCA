@@ -10,6 +10,6 @@ class q7_sum_of_natural_numbers {
         for (int i = 1; i <= n; i++) {
             sum = sum + i;
         }
-        System.out.println("Sum of First "+n+" Natual Numbers is: "+sum);
+        System.out.println("Sum of First " + n + " Natual Numbers is: " + sum);
     }
 }
