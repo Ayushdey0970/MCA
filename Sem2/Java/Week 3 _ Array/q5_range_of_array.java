@@ -4,7 +4,9 @@ class q5_range_of_array {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+        System.out.print("Enter Size of Array: ");
         int n = sc.nextInt();
+        System.out.println("Enter Array Elements: ");
         int ar[] = new int[n];
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;

@@ -4,7 +4,7 @@ class q17_merge_float_arrays {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
-        System.out.println("Enter Number of Rows for First Array: ");
+        System.out.println("Enter Number of Elements for First Array: ");
         int n = sc.nextInt();
         float ar[] = new float[n];
         System.out.println("Enter Array Elements: ");
@@ -12,7 +12,7 @@ class q17_merge_float_arrays {
             ar[i] = sc.nextFloat();
         }
 
-        System.out.println("Enter Number of Rows for Second Array: ");
+        System.out.println("Enter Number of Elements for Second Array: ");
         int m = sc.nextInt();
         float arr[] = new float[n];
         System.out.println("Enter Array Elements: ");

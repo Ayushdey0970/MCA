@@ -5,7 +5,9 @@ public class q8_sum_diagonal_elements_2darray {
 
     public static void main(String args[]) {
         int s1 = 0, s2 = 0;
+        System.out.print("Enter Matrix Size: ");
         int n = sc.nextInt();
+        System.out.println("Enter Matrix Elements: ");
         int ar[][] = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
