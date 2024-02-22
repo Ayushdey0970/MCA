@@ -15,7 +15,7 @@ class Sample extends Complex {
 public class q4_method_hiding {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter 1 to execute f1 from Complex class, 2 to execute f1 from Sample class:");
+        System.out.println("1. Enter 1 to Execute f1 from Complex Class\n2. Enter 2 to Execute f1 from Sample Class:");
         int choice = scanner.nextInt();
         if (choice == 1) {
             Complex.f1();
