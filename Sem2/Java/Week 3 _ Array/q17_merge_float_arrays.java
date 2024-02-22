@@ -14,7 +14,7 @@ class q17_merge_float_arrays {
 
         System.out.println("Enter Number of Elements for Second Array: ");
         int m = sc.nextInt();
-        float arr[] = new float[n];
+        float arr[] = new float[m];
         System.out.println("Enter Array Elements: ");
         for (int i = 0; i < m; i++) {
             arr[i] = sc.nextFloat();
