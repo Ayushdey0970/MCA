@@ -7,7 +7,7 @@ class q9_multiplication_table {
         System.out.print("Enter a Number: ");
         int n = sc.nextInt();
         int i = 1;
-        while (i <= 12) {
+        while (i <= 10) {
             System.out.println(n + " * " + i + " = " + n * i);
             i++;
         }
