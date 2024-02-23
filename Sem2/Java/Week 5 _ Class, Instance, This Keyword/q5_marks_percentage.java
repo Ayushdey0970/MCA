@@ -29,7 +29,7 @@ class q5_marks_percentage {
         int roll = sc.nextInt();
         System.out.print("Enter Marks of First Subject: ");
         int sub1 = sc.nextInt();
-        System.out.print("Enter Marks of First Subject: ");
+        System.out.print("Enter Marks of Second Subject: ");
         int sub2 = sc.nextInt();
 
         Student obj = new Student(name, roll, sub1, sub2);
