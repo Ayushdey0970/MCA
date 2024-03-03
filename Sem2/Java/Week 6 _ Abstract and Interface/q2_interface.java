@@ -1,5 +1,9 @@
 import java.util.*;
 
+interface sample_interface {
+    void display();
+}
+
 class q2_interface implements sample_interface {
     @Override
     public void display() {
