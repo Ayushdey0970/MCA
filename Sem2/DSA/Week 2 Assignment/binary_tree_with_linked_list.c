@@ -116,12 +116,9 @@ void order(struct node *root, int check)
 
 int countLeafNodes(struct node *root)
 {
-    if (root->left == NULL)
+    if (root->left == NULL && root->right == NULL)
     {
-        if (root->right == NULL)
-        {
-            return 1;
-        }
+        return 1;
     }
     return countLeafNodes(root->left) + countLeafNodes(root->right);
 }
