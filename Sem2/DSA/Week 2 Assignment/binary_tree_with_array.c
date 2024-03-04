@@ -51,10 +51,8 @@ void main()
 
     buildTree(tree, 0, item);
 
-    int size = sizeof(tree) / sizeof(tree[0]);
-
     printf("\nTree Structure : \n");
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < max; i++)
     {
         if (tree[i] == -1)
         {
