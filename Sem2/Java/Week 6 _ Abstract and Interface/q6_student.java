@@ -179,8 +179,6 @@ class q6_student {
                     }
 
                     if (migrant != null) {
-                        System.out.println("Enter New Registration Number: ");
-                        migrant.regdNo = sc.nextInt();
                         while (true) {
                             System.out
                                     .println("Do you want to Change any other Details of this Student?\n1. Yes\n2. No");
