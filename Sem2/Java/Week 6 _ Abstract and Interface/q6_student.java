@@ -31,7 +31,7 @@ class hostel {
         return hostelLocation;
     }
 
-    public int getNumeberOfRooms() {
+    public int getNumberOfRooms() {
         return numberOfRooms;
     }
 
@@ -103,9 +103,9 @@ class student extends hostel implements department {
         setAvgMarks(avgMarks);
         setDeptName(deptName);
         setDeptHead(deptHead);
-        setHostelName(hostelName);
-        setHostelLocation(hostelLocation);
-        setNumberOfRooms(numberOfRooms);
+        super.setHostelName(hostelName);
+        super.setHostelLocation(hostelLocation);
+        super.setNumberOfRooms(numberOfRooms);
     }
 
     public void getData() {
@@ -113,9 +113,9 @@ class student extends hostel implements department {
         System.out.println("Elective Subject: " + getElectiveSubject());
         System.out.println("Registration Number: " + getregdNo());
         System.out.println("Average Marks: " + getAvgMarks());
-        System.out.println("Hostel Name: " + getHostelName());
-        System.out.println("Hostel Location: " + getHostelLocation());
-        System.out.println("Number of Rooms: " + getNumeberOfRooms());
+        System.out.println("Hostel Name: " + super.getHostelName());
+        System.out.println("Hostel Location: " + super.getHostelLocation());
+        System.out.println("Number of Rooms: " + super.getNumberOfRooms());
     }
 
     @Override
@@ -222,7 +222,7 @@ class q6_student {
 
                         if (newIndex != -1) {
                             ar[newIndex] = migrant;
-                            System.out.println("Student Migrated Succesfully");
+                            System.out.println("Student Migrated Successfully");
                         } else {
                             System.out.println("No Free Slots are Available Right Now");
                         }
