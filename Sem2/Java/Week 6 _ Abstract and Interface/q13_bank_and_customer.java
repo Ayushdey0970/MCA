@@ -68,6 +68,7 @@ class q13_bank_and_customer {
             boolean flag = false;
             switch (ch) {
                 case 1:
+                    flag = false;
                     for (customer c : ar) {
                         if (c.accountId == accountId) {
                             System.out.println("Account Already Exists!!");
@@ -87,24 +88,44 @@ class q13_bank_and_customer {
                         break;
                     }
                 case 2:
-                    for(customer c:ar) {
-                        if(c.accountId==accountId) {
+                    flag = false;
+                    for (customer c : ar) {
+                        if (c.accountId == accountId) {
                             System.out.print("Enter Amount to be Deposited: ");
-                            float amount=sc.nextFloat();
-                            c.balance=c.deposit(amount);
-                            flag=true;
+                            float amount = sc.nextFloat();
+                            c.balance = c.deposit(amount);
+                            flag = true;
                             break;
                         }
                     }
-                    if(flag) {
+                    if (flag) {
                         break;
-                    }
-                    else {
+                    } else {
                         System.out.println("This Account Doesn't Exist");
                         break;
                     }
-                    case 3:
-                        
+                case 3:
+                    flag = false;
+                    for (customer c : ar) {
+                        if (c.accountId == accountId) {
+                            System.out.print("Enter Amount to Withdraw: ");
+                            float amount = sc.nextFloat();
+                            c.withdraw(amount);
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag) {
+                        break;
+                    } else {
+                        System.out.println("This Account Doesn't Exist");
+                        break;
+                    }
+                case 4:
+                    flag = false;
+                    for (customer c : ar) {
+
+                    }
             }
         }
     }
