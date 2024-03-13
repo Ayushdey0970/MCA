@@ -63,6 +63,10 @@ class q13_bank_and_customer {
             System.out.println(
                     "1. Create Account\n2. Deposit Amount\n3. Withdraw Amount\n4. Display Details\n5. Close Account\n6. Exit: ");
             int ch = sc.nextInt();
+            if (ch == 6) {
+                System.out.println("Exiting!!");
+                System.exit(0);
+            }
             System.out.print("Enter Account Number: ");
             long accountId = sc.nextLong();
             boolean flag = false;
@@ -124,7 +128,31 @@ class q13_bank_and_customer {
                 case 4:
                     flag = false;
                     for (customer c : ar) {
-
+                        if (c.accountId == accountId) {
+                            c.display();
+                            flag = true;
+                        }
+                    }
+                    if (flag) {
+                        break;
+                    } else {
+                        System.out.println("This Account Doesn't Exist");
+                        break;
+                    }
+                case 5:
+                    for (customer c : ar) {
+                        if (c.accountId == accountId) {
+                            c.close();
+                            flag = true;
+                            ar.remove(ar.indexOf(c));
+                            break;
+                        }
+                    }
+                    if (flag) {
+                        break;
+                    } else {
+                        System.out.println("This Account Doesn't Exist");
+                        break;
                     }
             }
         }
