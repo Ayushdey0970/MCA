@@ -1,16 +1,18 @@
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 public class q7 {
     public static void main(String[] args) {
         Method[] methods = SynchronizedClass.class.getDeclaredMethods();
         for (Method method : methods) {
             System.out.println("Method: " + method.getName());
-            if (method.isSynchronized()) {
-                System.out.println("Synchronized: Yes");
-            } else {
-                System.out.println("Synchronized: No");
-            }
+            boolean isSynchronized = isMethodSynchronized(method);
+            System.out.println("Synchronized: " + (isSynchronized ? "Yes" : "No"));
         }
+    }
+
+    private static boolean isMethodSynchronized(Method method) {
+        return (method.getModifiers() & Modifier.SYNCHRONIZED) != 0;
     }
 }
 
