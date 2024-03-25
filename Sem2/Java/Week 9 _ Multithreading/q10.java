@@ -17,13 +17,13 @@ public class q10 {
         return balance;
     }
 
-    public void transfer(q10 target, int amount) {
+    public void transfer(q10_string_compare target, int amount) {
         if (this == target) {
             System.out.println("Cannot transfer to the same account.");
             return;
         }
-        q10 first = this;
-        q10 second = target;
+        q10_string_compare first = this;
+        q10_string_compare second = target;
         if (System.identityHashCode(this) > System.identityHashCode(target)) {
             first = target;
             second = this;

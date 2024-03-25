@@ -4,7 +4,7 @@ public class q19 extends Thread {
     }
 
     public static void main(String[] args) {
-        q19 thread = new q19();
+        q19_replace_substring thread = new q19_replace_substring();
         thread.start();
     }
 }

@@ -16,7 +16,7 @@ public class q32 implements MyExtendedInterface {
     }
 
     public static void main(String[] args) {
-        q32 example = new q32();
+        q32_first_last_occurance example = new q32_first_last_occurance();
         example.display();
         example.show();
     }

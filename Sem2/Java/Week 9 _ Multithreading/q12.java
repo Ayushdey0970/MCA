@@ -4,7 +4,7 @@ public class q12 implements Runnable {
     }
 
     public static void main(String[] args) {
-        q12 myRunnable = new q12();
+        q12_string_equals myRunnable = new q12_string_equals();
         Thread thread = new Thread(myRunnable);
         thread.start();
     }

@@ -16,7 +16,7 @@ public class q33 implements MyExtendedInterface {
     }
 
     public static void main(String[] args) {
-        q33 example = new q33();
+        q33_display_prime_position_characters example = new q33_display_prime_position_characters();
         example.display();
         example.show();
     }

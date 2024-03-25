@@ -1,7 +1,7 @@
 public class q10_2nd {
     public static void main(String[] args) {
-        final q10 acc1 = new q10();
-        final q10 acc2 = new q10();
+        final q10_string_compare acc1 = new q10_string_compare();
+        final q10_string_compare acc2 = new q10_string_compare();
 
         Thread thread1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {

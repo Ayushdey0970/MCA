@@ -14,5 +14,3 @@ public class q38 {
         sc.close();
     }
 }
-
-// Same as question 39
