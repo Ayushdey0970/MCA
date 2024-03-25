@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class q42 {
+public class q42_frequency_of_characters {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

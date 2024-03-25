@@ -1,4 +1,4 @@
-public class q10 {
+public class q10_string_compare {
     private int balance = 10000;
 
     public void deposit(int amount) {

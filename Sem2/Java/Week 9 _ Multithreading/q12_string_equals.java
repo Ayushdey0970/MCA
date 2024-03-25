@@ -1,4 +1,4 @@
-public class q12 implements Runnable {
+public class q12_string_equals implements Runnable {
     public void run() {
         System.out.println("Thread is running...");
     }

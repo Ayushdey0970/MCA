@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class q41 {
+public class q41_frequency_and_position {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

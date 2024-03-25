@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class q50 {
+public class q50_count_words {
 
     public static int wordCount(String s) {
         String[] words = s.trim().split("\\s");

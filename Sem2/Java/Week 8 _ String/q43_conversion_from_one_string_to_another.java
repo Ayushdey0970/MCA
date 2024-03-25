@@ -1,7 +1,7 @@
 import java.util.*;
 
-public class q43 {
-    public static void main(String[] arpan) {
+public class q43_conversion_from_one_string_to_another {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter two strings : ");
         String src = sc.nextLine();

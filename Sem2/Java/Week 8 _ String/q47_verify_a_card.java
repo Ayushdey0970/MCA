@@ -1,19 +1,16 @@
 import java.lang.reflect.Method;
 import java.util.Scanner;
 
-public class q47 {
+public class q47_verify_a_card {
     public static void main(String[] args) {
-        // Get the Class object for StringBuffer
         Class<StringBuffer> stringBufferClass = StringBuffer.class;
 
-        // Get all the methods declared in the StringBuffer class
         Method[] stringBufferMethods = stringBufferClass.getDeclaredMethods();
 
-        // Method name to check
         Scanner sc = new Scanner(System.in);
-        String methodName = sc.nextLine(); // Change this to the method you want to verify
+        System.out.print("Enter a Method Name: ");
+        String methodName = sc.nextLine();
 
-        // Check if the method exists in the StringBuffer class
         boolean methodExists = false;
         for (Method method : stringBufferMethods) {
             if (method.getName().equals(methodName)) {
@@ -22,7 +19,6 @@ public class q47 {
             }
         }
 
-        // Print the result
         if (methodExists) {
             System.out.println("The method '" + methodName + "' exists in the StringBuffer class.");
         } else {
