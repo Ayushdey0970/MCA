@@ -1,22 +1,14 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class q6_roots{
+public class q6_quadratic {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        // Create a Scanner object to read input
-        Scanner sc = new Scanner(System.in);
-        
-        // Prompt the user to enter coefficients of the quadratic equation
         System.out.println("Enter the coefficients of the quadratic equation (a, b, c):");
         double a = sc.nextDouble();
         double b = sc.nextDouble();
         double c = sc.nextDouble();
-        
-        
-        
-        // Calculate discriminant
         double dis = b * b - 4 * a * c;
-        
-        // Check the nature of roots and calculate roots accordingly
         if (dis > 0) {
             double root1 = (-b + Math.sqrt(dis)) / (2 * a);
             double root2 = (-b - Math.sqrt(dis)) / (2 * a);

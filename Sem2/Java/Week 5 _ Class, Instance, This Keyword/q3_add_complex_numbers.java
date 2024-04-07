@@ -23,11 +23,11 @@ class q3_add_complex_numbers {
         int r1, i1, r2, i2;
         System.out.print("Enter First Real Part: ");
         r1 = sc.nextInt();
-        System.out.print("Enter First Imaginory Part: ");
+        System.out.print("Enter First Imaginary Part: ");
         i1 = sc.nextInt();
         System.out.print("Enter Second Real Part: ");
         r2 = sc.nextInt();
-        System.out.print("Enter Second Imaginory Part: ");
+        System.out.print("Enter Second Imaginary Part: ");
         i2 = sc.nextInt();
         complex obj1 = new complex(r1, i1);
         complex obj2 = new complex(r2, i2);

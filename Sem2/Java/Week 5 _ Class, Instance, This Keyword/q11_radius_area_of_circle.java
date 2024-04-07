@@ -13,7 +13,7 @@ class circle {
         this.radius = radius;
     }
 
-    void getradius() {
+    void getRadius() {
         System.out.println("Radius: " + radius);
         System.out.println("Color: " + color);
     }
@@ -33,10 +33,10 @@ class q11_radius_area_of_circle {
         int r = sc.nextInt();
         circle obj2 = new circle(r);
         System.out.println("Details of First Circle: ");
-        obj1.getradius();
+        obj1.getRadius();
         obj1.getArea();
         System.out.println("Details of Second Circle: ");
-        obj2.getradius();
+        obj2.getRadius();
         obj2.getArea();
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class stack {
+public class q2_stack_with_array {
     private static final int MAX_SIZE = 100;
     private static int[] stack = new int[MAX_SIZE];
     private static int top = -1;

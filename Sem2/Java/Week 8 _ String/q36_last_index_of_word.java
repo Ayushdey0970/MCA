@@ -10,7 +10,7 @@ public class q36_last_index_of_word {
 
         int index = str.lastIndexOf(word);
 
-        System.out.println(index);
+        System.out.println(index + 1);
         sc.close();
     }
 }

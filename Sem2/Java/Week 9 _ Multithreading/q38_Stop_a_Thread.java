@@ -17,7 +17,7 @@ public class q38_Stop_a_Thread {
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt(); // Reset the interrupted status
+                    Thread.currentThread().interrupt();
                 }
             }
             System.out.println("Thread has stopped.");

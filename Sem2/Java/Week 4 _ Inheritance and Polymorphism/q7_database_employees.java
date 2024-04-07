@@ -1,132 +1,173 @@
 import java.util.*;
 
+// Base class Staff
 class Staff {
-    protected String code;
+    protected int code;
     protected String name;
 
-    public Staff(String code, String name) {
+    public Staff(int code, String name) {
         this.code = code;
         this.name = name;
     }
 
-    public String toString() {
-        return "Code: " + code + ", Name: " + name;
+    public void display() {
+        System.out.println("Code: " + code);
+        System.out.println("Name: " + name);
     }
 }
 
+// Subclass Teacher
 class Teacher extends Staff {
     private String subject;
     private String publication;
 
-    public Teacher(String code, String name, String subject, String publication) {
+    public Teacher(int code, String name, String subject, String publication) {
         super(code, name);
         this.subject = subject;
         this.publication = publication;
     }
 
-    public String toString() {
-        return super.toString() + ", Subject: " + subject + ", Publication: " + publication;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Subject: " + subject);
+        System.out.println("Publication: " + publication);
     }
 }
 
+// Subclass Officer
 class Officer extends Staff {
     private String grade;
 
-    public Officer(String code, String name, String grade) {
+    public Officer(int code, String name, String grade) {
         super(code, name);
         this.grade = grade;
     }
 
-    public String toString() {
-        return super.toString() + ", Grade: " + grade;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Grade: " + grade);
     }
 }
 
+// Subclass Typist
 class Typist extends Staff {
     private int speed;
 
-    public Typist(String code, String name, int speed) {
+    public Typist(int code, String name, int speed) {
         super(code, name);
         this.speed = speed;
     }
 
-    public String toString() {
-        return super.toString() + ", Speed: " + speed;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Speed: " + speed);
     }
 }
 
+// Subclass RegularTypist
 class RegularTypist extends Typist {
     private double remuneration;
 
-    public RegularTypist(String code, String name, int speed, double remuneration) {
+    public RegularTypist(int code, String name, int speed, double remuneration) {
         super(code, name, speed);
         this.remuneration = remuneration;
     }
 
-    public String toString() {
-        return super.toString() + ", Remuneration: " + remuneration;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Remuneration: " + remuneration);
     }
 }
 
+// Subclass CasualTypist
 class CasualTypist extends Typist {
     private double dailyWages;
 
-    public CasualTypist(String code, String name, int speed, double dailyWages) {
+    public CasualTypist(int code, String name, int speed, double dailyWages) {
         super(code, name, speed);
         this.dailyWages = dailyWages;
     }
 
-    public String toString() {
-        return super.toString() + ", Daily Wages: " + dailyWages;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Daily Wages: " + dailyWages);
     }
 }
 
 public class q7_database_employees {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+
+        // Input for Teacher
         System.out.println("Enter details for Teacher:");
         System.out.print("Code: ");
-        String teacherCode = scanner.nextLine();
+        int teacherCode = sc.nextInt();
+        sc.nextLine(); // Consume newline
         System.out.print("Name: ");
-        String teacherName = scanner.nextLine();
+        String teacherName = sc.nextLine();
         System.out.print("Subject: ");
-        String subject = scanner.nextLine();
+        String subject = sc.nextLine();
         System.out.print("Publication: ");
-        String publication = scanner.nextLine();
+        String publication = sc.nextLine();
+
         Teacher teacher = new Teacher(teacherCode, teacherName, subject, publication);
-        System.out.println("Enter details for Officer:");
+
+        // Input for Officer
+        System.out.println("\nEnter details for Officer:");
         System.out.print("Code: ");
-        String officerCode = scanner.nextLine();
+        int officerCode = sc.nextInt();
+        sc.nextLine(); // Consume newline
         System.out.print("Name: ");
-        String officerName = scanner.nextLine();
+        String officerName = sc.nextLine();
         System.out.print("Grade: ");
-        String grade = scanner.nextLine();
+        String grade = sc.nextLine();
+
         Officer officer = new Officer(officerCode, officerName, grade);
-        System.out.println("Enter details for Regular Typist:");
+
+        // Input for Regular Typist
+        System.out.println("\nEnter details for Regular Typist:");
         System.out.print("Code: ");
-        String regularTypistCode = scanner.nextLine();
+        int regularTypistCode = sc.nextInt();
+        sc.nextLine(); // Consume newline
         System.out.print("Name: ");
-        String regularTypistName = scanner.nextLine();
+        String regularTypistName = sc.nextLine();
         System.out.print("Speed: ");
-        int regularTypistSpeed = scanner.nextInt();
+        int speed = sc.nextInt();
         System.out.print("Remuneration: ");
-        double remuneration = scanner.nextDouble();
-        RegularTypist regularTypist = new RegularTypist(regularTypistCode, regularTypistName, regularTypistSpeed,
-                remuneration);
-        System.out.println("Enter details for Casual Typist:");
+        double remuneration = sc.nextDouble();
+
+        RegularTypist regularTypist = new RegularTypist(regularTypistCode, regularTypistName, speed, remuneration);
+
+        // Input for Casual Typist
+        System.out.println("\nEnter details for Casual Typist:");
         System.out.print("Code: ");
-        String casualTypistCode = scanner.next();
+        int casualTypistCode = sc.nextInt();
+        sc.nextLine(); // Consume newline
         System.out.print("Name: ");
-        String casualTypistName = scanner.next();
+        String casualTypistName = sc.nextLine();
         System.out.print("Speed: ");
-        int casualTypistSpeed = scanner.nextInt();
+        int casualTypistSpeed = sc.nextInt();
         System.out.print("Daily Wages: ");
-        double dailyWages = scanner.nextDouble();
+        double dailyWages = sc.nextDouble();
+
         CasualTypist casualTypist = new CasualTypist(casualTypistCode, casualTypistName, casualTypistSpeed, dailyWages);
-        System.out.println("Teacher: " + teacher);
-        System.out.println("Officer: " + officer);
-        System.out.println("Regular Typist: " + regularTypist);
-        System.out.println("Casual Typist: " + casualTypist);
-        scanner.close();
+
+        // Displaying details
+        System.out.println("\nDetails of entered employees:");
+        System.out.println("\nTeacher:");
+        teacher.display();
+        System.out.println("\nOfficer:");
+        officer.display();
+        System.out.println("\nRegular Typist:");
+        regularTypist.display();
+        System.out.println("\nCasual Typist:");
+        casualTypist.display();
+
+        sc.close();
     }
 }

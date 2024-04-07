@@ -1,92 +1,102 @@
-import java.util.*;
+import java.util.Scanner;
 
+// Base class Building
 class Building {
-    protected int numFloors;
-    protected int numRooms;
-    protected double totalFootage;
+    protected int Floors;
+    protected int Rooms;
+    protected double Footage;
 
-    public Building(int numFloors, int numRooms, double totalFootage) {
-        this.numFloors = numFloors;
-        this.numRooms = numRooms;
-        this.totalFootage = totalFootage;
+    public Building(int Floors, int Rooms, double Footage) {
+        this.Floors = Floors;
+        this.Rooms = Rooms;
+        this.Footage = Footage;
     }
 
-    public String toString() {
-        return "Number of Floors: " + numFloors + ", Number of Rooms: " + numRooms + ", Total Footage: " + totalFootage;
+    public void display() {
+        System.out.println("Number of Floors: " + Floors);
+        System.out.println("Number of Rooms: " + Rooms);
+        System.out.println("Total Footage: " + Footage + " sqft");
     }
 }
 
+// Derived class House
 class House extends Building {
-    private int numBedrooms;
-    private int numBathrooms;
+    private int Bedrooms;
+    private int Bathrooms;
 
-    public House(int numFloors, int numRooms, double totalFootage, int numBedrooms, int numBathrooms) {
-        super(numFloors, numRooms, totalFootage);
-        this.numBedrooms = numBedrooms;
-        this.numBathrooms = numBathrooms;
+    public House(int Floors, int Rooms, double Footage, int Bedrooms, int Bathrooms) {
+        super(Floors, Rooms, Footage);
+        this.Bedrooms = Bedrooms;
+        this.Bathrooms = Bathrooms;
     }
 
-    public String toString() {
-        return super.toString() + ", Number of Bedrooms: " + numBedrooms + ", Number of Bathrooms: " + numBathrooms;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Number of Bedrooms: " + Bedrooms);
+        System.out.println("Number of Bathrooms: " + Bathrooms);
     }
 }
 
+// Derived class Office
 class Office extends Building {
-    private int numTelephones;
-    private int numTables;
+    private int Telephones;
+    private int Tables;
 
-    public Office(int numFloors, int numRooms, double totalFootage, int numTelephones, int numTables) {
-        super(numFloors, numRooms, totalFootage);
-        this.numTelephones = numTelephones;
-        this.numTables = numTables;
+    public Office(int Floors, int Rooms, double Footage, int Telephones, int Tables) {
+        super(Floors, Rooms, Footage);
+        this.Telephones = Telephones;
+        this.Tables = Tables;
     }
 
-    public String toString() {
-        return super.toString() + ", Number of Telephones: " + numTelephones + ", Number of Tables: " + numTables;
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Number of Telephones: " + Telephones);
+        System.out.println("Number of Tables: " + Tables);
     }
 }
 
 public class q9_office {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
+
+        // Input for Building
         System.out.println("Enter details for Building:");
         System.out.print("Number of Floors: ");
-        int buildingFloors = scanner.nextInt();
+        int Floors = sc.nextInt();
         System.out.print("Number of Rooms: ");
-        int buildingRooms = scanner.nextInt();
+        int Rooms = sc.nextInt();
         System.out.print("Total Footage: ");
-        double buildingFootage = scanner.nextDouble();
-        Building building = new Building(buildingFloors, buildingRooms, buildingFootage);
-        System.out.println("Enter details for House:");
-        System.out.print("Number of Floors: ");
-        int houseFloors = scanner.nextInt();
-        System.out.print("Number of Rooms: ");
-        int houseRooms = scanner.nextInt();
-        System.out.print("Total Footage: ");
-        double houseFootage = scanner.nextDouble();
+        double Footage = sc.nextDouble();
+
+        // Input for House
+        System.out.println("\nEnter details for House:");
         System.out.print("Number of Bedrooms: ");
-        int houseBedrooms = scanner.nextInt();
+        int Bedrooms = sc.nextInt();
         System.out.print("Number of Bathrooms: ");
-        int houseBathrooms = scanner.nextInt();
-        House house = new House(houseFloors, houseRooms, houseFootage, houseBedrooms, houseBathrooms);
-        System.out.println("Enter details for Office:");
-        System.out.print("Number of Floors: ");
-        int officeFloors = scanner.nextInt();
-        System.out.print("Number of Rooms: ");
-        int officeRooms = scanner.nextInt();
-        System.out.print("Total Footage: ");
-        double officeFootage = scanner.nextDouble();
+        int Bathrooms = sc.nextInt();
+
+        // Input for Office
+        System.out.println("\nEnter details for Office:");
         System.out.print("Number of Telephones: ");
-        int officeTelephones = scanner.nextInt();
+        int Telephones = sc.nextInt();
         System.out.print("Number of Tables: ");
-        int officeTables = scanner.nextInt();
-        Office office = new Office(officeFloors, officeRooms, officeFootage, officeTelephones, officeTables);
-        System.out.println("\nBuilding Details:");
-        System.out.println(building);
-        System.out.println("\nHouse Details:");
-        System.out.println(house);
-        System.out.println("\nOffice Details:");
-        System.out.println(office);
-        scanner.close();
+        int Tables = sc.nextInt();
+
+        // Creating objects
+        Building b = new Building(Floors, Rooms, Footage);
+        House h = new House(Floors, Rooms, Footage, Bedrooms, Bathrooms);
+        Office o = new Office(Floors, Rooms, Footage, Telephones, Tables);
+
+        // Displaying details
+        System.out.println("\nDetails of Building:");
+        b.display();
+        System.out.println("\nDetails of House:");
+        h.display();
+        System.out.println("\nDetails of Office:");
+        o.display();
+
+        sc.close();
     }
 }

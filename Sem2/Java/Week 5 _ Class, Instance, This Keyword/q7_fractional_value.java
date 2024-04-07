@@ -28,12 +28,12 @@ public class q7_fractional_value {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.print("Enter First Numerator: ");
+        System.out.print("Enter Numerator of First Fraction: ");
         int a = sc.nextInt();
-        System.out.print("Enter First Denominator: ");
+        System.out.print("Enter Denominator of Second Fraction: ");
         int b = sc.nextInt();
         Fraction fraction1 = new Fraction(a, b);
-        System.out.print("Enter First Numerator: ");
+        System.out.print("Enter Numerator of Second Fraction: ");
         int x = sc.nextInt();
         Fraction fraction2 = new Fraction(x);
         Fraction fraction3 = new Fraction();
