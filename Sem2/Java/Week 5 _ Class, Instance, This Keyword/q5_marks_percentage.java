@@ -15,7 +15,7 @@ class Student {
 
     void calculate() {
         System.out.println("Total Marks: " + (sub1 + sub2));
-        System.out.println("Percentage: " + (sub1 + sub2) / 2);
+        System.out.println("Percentage: " + (sub1 + sub2) * 100 / 200);
     }
 }
 

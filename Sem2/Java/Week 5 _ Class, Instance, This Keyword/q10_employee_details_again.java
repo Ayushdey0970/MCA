@@ -30,16 +30,10 @@ class q10_employee_details_again {
             System.out.print("Enter Employee Basic Salary: ");
             basicSalary[i] = sc.nextInt();
         }
-        Employee obj1 = new Employee(id[0], name[0], basicSalary[0]);
-        Employee obj2 = new Employee(id[1], name[1], basicSalary[1]);
-        Employee obj3 = new Employee(id[2], name[2], basicSalary[2]);
-        Employee obj4 = new Employee(id[3], name[3], basicSalary[3]);
-        Employee obj5 = new Employee(id[4], name[4], basicSalary[4]);
         System.out.println("  Employee     Id  Basic Salary");
-        obj1.print();
-        obj2.print();
-        obj3.print();
-        obj4.print();
-        obj5.print();
+        for (int i = 0; i < 5; i++) {
+            Employee obj = new Employee(id[i], name[i], basicSalary[i]);
+            obj.print();
+        }
     }
 }

@@ -1,6 +1,5 @@
 import java.util.*;
-import java.time.YearMonth;
-import java.time.LocalDate;
+import java.time.*;
 
 class q15_commission {
     static Scanner sc = new Scanner(System.in);

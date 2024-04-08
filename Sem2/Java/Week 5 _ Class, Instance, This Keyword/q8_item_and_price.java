@@ -25,16 +25,10 @@ class q8_item_and_price {
             System.out.print("Enter Price " + (i + 1) + ": ");
             price[i] = sc.nextInt();
         }
-        Item obj1 = new Item(code[0], price[0]);
-        Item obj2 = new Item(code[1], price[1]);
-        Item obj3 = new Item(code[2], price[2]);
-        Item obj4 = new Item(code[3], price[3]);
-        Item obj5 = new Item(code[4], price[4]);
         System.out.println("Code  Price");
-        obj1.print();
-        obj2.print();
-        obj3.print();
-        obj4.print();
-        obj5.print();
+        for (int i = 0; i < 5; i++) {
+            Item obj = new Item(code[i], price[i]);
+            obj.print();
+        }
     }
 }
