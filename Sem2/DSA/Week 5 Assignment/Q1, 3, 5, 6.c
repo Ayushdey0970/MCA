@@ -20,7 +20,7 @@ int main()
 			scanf("%d", &adj[i][j]);
 		}
 	}
-	printf("\n 1. Print Inputed Matrix\n 2. Count Total Edges\n 3. Count Total Vertices\n 4. Count Odd Even Degree Vertices\n 5. Check complete graph or not\n 6. Exit\n");
+	printf("\n 1. Print Inputted Matrix\n 2. Count Total Edges\n 3. Count Total Vertices\n 4. Count Odd Even Degree Vertices\n 5. Check complete graph or not\n 6. Exit\n");
 	while (1)
 	{
 		printf("\nEnter your choice : ");
@@ -28,7 +28,7 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			printf("\nThe inputed matrix is :\n");
+			printf("\nThe Inputted matrix is :\n");
 			for (i = 0; i < max; i++)
 			{
 				for (j = 0; j < max; j++)
