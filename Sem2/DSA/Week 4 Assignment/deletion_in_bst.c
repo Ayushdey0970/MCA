@@ -123,7 +123,6 @@ struct node *deleteElement(struct node *root, int value)
     {
         if (root->left == NULL && root->right == NULL)
         {
-            printf("%d is deleted\n", value);
             free(root);
             return NULL;
         }
