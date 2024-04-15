@@ -52,6 +52,7 @@ void main()
     buildTree(tree, 0, item);
 
     printf("\nTree Structure : \n");
+    int count = 0;
     for (int i = 0; i < max; i++)
     {
         if (tree[i] == -1)
@@ -61,6 +62,8 @@ void main()
         else
         {
             printf("%d ", tree[i]);
+            count++;
         }
     }
+    printf("\nThis tree has a total of: %d", count);
 }
