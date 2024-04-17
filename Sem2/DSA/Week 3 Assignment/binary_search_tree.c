@@ -75,7 +75,8 @@ int findHeight(struct node *root)
 void displayLevelWise(struct node *root)
 {
     int height = findHeight(root);
-    for (int i = 1; i <= height; i++)
+    int i;
+    for (i = 1; i <= height; i++)
     {
         displayLevelOrder(root, i);
         printf("\n");
@@ -165,11 +166,12 @@ void sorting()
     scanf("%d", &s);
     int ar[s];
     printf("Enter Array Elements: ");
-    for (int i = 0; i < s; i++)
+    int i;
+    for (i = 0; i < s; i++)
     {
         scanf("%d", &ar[i]);
     }
-    for (int i = 0; i < s; i++)
+    for (i = 0; i < s; i++)
     {
         root = insertNode(root, ar[i]);
     }

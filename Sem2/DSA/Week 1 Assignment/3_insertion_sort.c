@@ -1,7 +1,8 @@
 #include <stdio.h>
 void printArray(int arr[], int size)
 {
-    for (int i = 0; i < size; i++)
+    int i;
+    for (i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
     }
@@ -9,7 +10,8 @@ void printArray(int arr[], int size)
 }
 void insertionSort(int arr[], int size)
 {
-    for (int i = 1; i < size; i++)
+    int i;
+    for (i = 1; i < size; i++)
     {
         int key = arr[i];
         int j = i - 1;
@@ -32,5 +34,5 @@ int main()
     insertionSort(arr, size);
     printf("Sorted array: ");
     printArray(arr, size);
-    return 0;
+    getch();
 }

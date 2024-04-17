@@ -40,7 +40,8 @@ void merge(int arr[], int l, int m, int r)
         k++;
     }
     printf("After merge: ");
-    for (int idx = l; idx <= r; idx++)
+    int idx;
+    for (idx = l; idx <= r; idx++)
     {
         printf("%d ", arr[idx]);
     }
@@ -58,7 +59,8 @@ void mergeSort(int arr[], int l, int r)
 }
 void printArray(int arr[], int size)
 {
-    for (int i = 0; i < size; i++)
+    int i;
+    for (i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
     }
@@ -73,5 +75,5 @@ int main()
     mergeSort(arr, 0, size - 1);
     printf("Sorted array: ");
     printArray(arr, size);
-    return 0;
+    getch();
 }

@@ -7,8 +7,8 @@ void swap(int *a, int *b)
 }
 int partition(int arr[], int low, int high)
 {
-    int pivot = arr[high], i = (low - 1);
-    for (int j = low; j <= high - 1; j++)
+    int pivot = arr[high], i = (low - 1), j;
+    for (j = low; j <= high - 1; j++)
     {
         if (arr[j] < pivot)
         {
@@ -23,9 +23,9 @@ void quickSort(int arr[], int low, int high)
 {
     if (low < high)
     {
-        int pi = partition(arr, low, high);
+        int pi = partition(arr, low, high), i;
         printf("After partitioning: ");
-        for (int i = low; i <= high; i++)
+        for (i = low; i <= high; i++)
             printf("%d ", arr[i]);
         printf("\n");
         quickSort(arr, low, pi - 1);
@@ -34,7 +34,8 @@ void quickSort(int arr[], int low, int high)
 }
 void printArray(int arr[], int size)
 {
-    for (int i = 0; i < size; i++)
+    int i;
+    for (i = 0; i < size; i++)
         printf("%d ", arr[i]);
     printf("\n");
 }
@@ -48,5 +49,5 @@ int main()
     printf("Sorted array: ");
     printArray(arr, size);
     printf("Size: %d", size);
-    return 0;
+    getch();
 }

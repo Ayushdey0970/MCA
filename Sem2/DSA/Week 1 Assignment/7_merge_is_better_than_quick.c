@@ -64,9 +64,9 @@ void mergeSort(int arr[], int l, int r)
 int partition(int arr[], int low, int high)
 {
     int pivot = arr[high];
-    int i = low - 1;
+    int i = low - 1, j;
 
-    for (int j = low; j <= high - 1; j++)
+    for (j = low; j <= high - 1; j++)
     {
         if (arr[j] < pivot)
         {
@@ -100,8 +100,8 @@ int main()
     const int size = 100000;
 
     int dataSet_merge[size];
-    int dataSet_quick[size];
-    for (int i = 0; i < size; i++)
+    int dataSet_quick[size], i;
+    for (i = 0; i < size; i++)
     {
         dataSet_merge[i] = rand() % 1000;
         dataSet_quick[i] = dataSet_merge[i];
@@ -120,5 +120,5 @@ int main()
     printf("Time taken by Merge sort: %lf seconds\n", time_merge);
     printf("Time taken by Quick sort: %lf seconds\n", time_quick);
 
-    return 0;
+    getch();
 }

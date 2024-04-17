@@ -9,9 +9,10 @@ void swap(int *a, int *b)
 }
 void bubbleSort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
+    int i,j;
+    for (i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        for (j = 0; j < n - i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
             {
@@ -23,8 +24,8 @@ void bubbleSort(int arr[], int n)
 int partition(int arr[], int low, int high)
 {
     int pivot = arr[high];
-    int i = (low - 1);
-    for (int j = low; j <= high - 1; j++)
+    int i = (low - 1), j;
+    for (j = low; j <= high - 1; j++)
     {
         if (arr[j] < pivot)
         {
@@ -49,8 +50,8 @@ int main()
     const int size = 10000;
 
     int bubbleArr[size];
-    int quickArr[size];
-    for (int i = 0; i < size; i++)
+    int quickArr[size], i;
+    for (i = 0; i < size; i++)
     {
         bubbleArr[i] = rand() % 1000;
         quickArr[i] = bubbleArr[i];
@@ -64,5 +65,5 @@ int main()
     quickSort(quickArr, 0, size - 1);
     end = clock();
     printf("Time taken by Quick Sort: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-    return 0;
+    getch();
 }

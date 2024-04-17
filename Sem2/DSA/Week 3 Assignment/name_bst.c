@@ -36,6 +36,7 @@ struct node *insertNode(struct node *root, char value)
         {
             root->right = insertNode(root->right, value);
         }
+        return root;
     }
 }
 

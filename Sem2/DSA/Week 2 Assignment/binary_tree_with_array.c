@@ -42,8 +42,8 @@ void buildTree(int arr[], int index, int item)
 
 void main()
 {
-    int tree[max], item;
-    for (int i = 0; i < max; i++)
+    int tree[max], item, i;
+    for (i = 0; i < max; i++)
         tree[i] = -1;
 
     printf("\nEnter the value of root node : ");
@@ -53,7 +53,7 @@ void main()
 
     printf("\nTree Structure : \n");
     int count = 0;
-    for (int i = 0; i < max; i++)
+    for (i = 0; i < max; i++)
     {
         if (tree[i] == -1)
         {
@@ -66,4 +66,5 @@ void main()
         }
     }
     printf("\nThis tree has a total of: %d", count);
+    getch();
 }
